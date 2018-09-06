@@ -38,7 +38,67 @@ var possibleQuestions = [
             d: "Warren G. Harding",
         },
         correctAnswer: "a",
-    }
+    },
+    {
+        question: "How many days are in an ancient Egyption year?",
+        answers: {
+            a: "270",
+            b: "364",
+            c: "365",
+            d: "450",
+        },
+        correctAnswer: "c",
+    },
+    {
+        question: "What direction does the Statue of Libery Face?",
+        answers: {
+            a: "Northeast",
+            b: "Northwest",
+            c: "Southeast",
+            d: "Southwest",
+        },
+        correctAnswer: "c",
+    },
+    {
+        question: "If you have vitricophobia, what should I bring in order to torture you?",
+        answers: {
+            a: "Stepmothers",
+            b: "Stepbrothers",
+            c: "Stepfathers",
+            d: "Stepsisters",
+        },
+        correctAnswer: "c",
+    },
+    {
+        question: "What planet has the hottest surface temperature?",
+        answers: {
+            a: "Mercury",
+            b: "Mars",
+            c: "Venus",
+            d: "Saturn",
+        },
+        correctAnswer: "c",
+    },
+    {
+        question: "In the google logo, which letter is green?",
+        answers: {
+            a: "G",
+            b: "O",
+            c: "L",
+            d: "E",
+        },
+        correctAnswer: "c",
+    },
+    {
+        question: "Which of the following Japanese Islands is largest?",
+        answers: {
+            a: "Hokkaido",
+            b: "Honshu",
+            c: "Shikoku",
+            d: "Kyushu",
+        },
+        correctAnswer: "b",
+    },
 ];
 var quizContainer = document.getElementById("quiz");
 var resultsContainer = document.getElementById("results");
@@ -55,14 +115,14 @@ function makeQuiz() {
                 answers.push(`
                 <label>
                     <input type="radio" name="questions${questionNumber}" value="${letter}">
-                    ${letter} : ${currentQuestion.answers[letter]}
+                    ${letter} : ${currentQuestion.answers[letter]}  
                     </label>`);
             }
             output.push(
-                `<div class="question">
-            ${currentQuestion.question}
-            </div>
-            <div class="answers"> ${answers.join('')}</div>`
+                `<div class="question">${questionNumber+1 + ".  "}${currentQuestion.question}</div>
+            <div class="answers"> ${answers.join('')}</div>
+            <div> </div>
+            <hr>`
             );
         }
     );
