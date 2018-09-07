@@ -114,12 +114,12 @@ function makeQuiz() {
             for (letter in currentQuestion.answers) {
                 answers.push(`
                 <label>
-                    <input type="radio" name="questions${questionNumber}" value="${letter}">
+                    <input type="radio" name="question${questionNumber}" value="${letter}">
                     ${letter} : ${currentQuestion.answers[letter]}  
                     </label>`);
             }
             output.push(
-                `<div class="question">${questionNumber+1 + ".  "}${currentQuestion.question}</div>
+                `<div class="question">${questionNumber + 1 + ".  "}${currentQuestion.question}</div>
             <div class="answers"> ${answers.join('')}</div>
             <div> </div>
             <hr>`
@@ -142,6 +142,7 @@ function gradeQuiz() {
 
             if (selected === currentQuestion.correctAnswer) {
                 correctAnswers++;
+                answerContainers[questionNumber].style.color = 'lightgreen';
             }
         });
         resultsContainer.innerHTML = (`${correctAnswers} out of ${possibleQuestions.length}`);
