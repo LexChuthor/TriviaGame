@@ -103,6 +103,7 @@ var possibleQuestions = [
 var quizContainer = document.getElementById("quiz");
 var resultsContainer = document.getElementById("results");
 var submitButton = document.getElementById("result");
+var submitPushes = 0;
 
 
 //creates the quiz with buttons for answer choices, from a question bank defined by possibleQuestion object
@@ -132,6 +133,8 @@ function makeQuiz() {
 makeQuiz();
 //function to grade the quiz, and show a grade of correct/total questions
 function gradeQuiz() {
+    if(submitPushes === 0 ){
+        submitPushes++;
     var answerContainers = quizContainer.querySelectorAll(".answers");
     var correctAnswers = 0;
     possibleQuestions.forEach(
@@ -146,6 +149,7 @@ function gradeQuiz() {
             }
         });
         resultsContainer.innerHTML = (`${correctAnswers} out of ${possibleQuestions.length}`);
+    }
 }
 
 $("#submit").on("click", gradeQuiz);
