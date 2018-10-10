@@ -1,5 +1,5 @@
 # TriviaGame
-
+https://lexchuthor.github.io/TriviaGame/
 Its a timed quiz!
 
 Answer the questions and hit the submit button to test your knowledge!
